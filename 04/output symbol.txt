@@ -1,0 +1,17 @@
+That "->" isn’t some weird arrow operator. It’s just Rust’s way of saying “this function returns a value of this type.”
+
+So in your code:
+fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+It reads like:
+take two i32 parameters (a and b),
+produce (->) an i32 as the output,
+and inside the function body, the last expression a + b is returned automatically (no return keyword needed unless you want to bail early).
+
+If you leave the arrow and type out:
+fn add(a: i32, b: i32) {
+    a + b
+}
+Now the return type defaults to (), the unit type (basically “nothing”). The addition happens, but the result gets thrown into the void.
+So, the arrow is just the separator between your function’s inputs and its output type.

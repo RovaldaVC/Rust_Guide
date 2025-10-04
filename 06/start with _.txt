@@ -1,0 +1,18 @@
+That underscore is Rust’s way of saying “I don’t care if you yell at me about this unused variable, compiler.”
+Normally, if you declare a variable and never use it, Rust smacks you with a warning:
+
+let x = 5; // warning: unused variable `x`
+
+But if you write it with a leading underscore:
+
+let _x = 5;
+
+Rust assumes you might want it, but you don’t want to hear complaints if you don’t use it. It silences the warning.
+Now here’s the funny part: in your code, you do use _x and _y in println!. So the underscore isn’t even needed. You could’ve just written:
+
+let x = 5;
+let y = &x;
+
+and everything would work the same.
+
+So in your snippet, the _ is basically cosmetic—like wearing sunglasses indoors. It makes no difference except telling the compiler “don’t bother me about this if I forget to use it.”

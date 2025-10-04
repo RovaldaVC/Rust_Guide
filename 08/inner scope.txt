@@ -1,0 +1,7 @@
+Shadowing inside the inner scope
+
+the outer x stays 6. Shadowing in an inner scope is temporary. Once you leave the {}, the inner x vanishes and the outer x (6) is still there.
+
+So output will be:
+The value of x in the inner scope is: 12
+The value of x in the outer scope is: 6

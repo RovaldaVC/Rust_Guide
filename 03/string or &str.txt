@@ -1,0 +1,25 @@
+to read that file requirements are needed. first read: &.txt, how to create a string.txt, mut and immutable.txt 
+
+1. &str is not a borrowed thing; dont think its like using & and for creating a refrence. (let x:&i32 = &y)
+&str actually means you cant change the string you are creating. it was created by rust because when the variable wont be changed its faster to load it! no modify options are created for variable from the beginning so its faster to load it. thats the power of &str.
+
+example:
+let x = "hello";
+or
+let x:&str ="hello";
+##both means its &str
+
+2. the other way is to use String which is actually modifiable and can be used to modify the string.
+the fact is String HAS the modifying tools! so its slower while loading the string.
+but even if it has the ability to change it must be mut! mut is like an access for it. without access point even if you have the tools you cant change.
+
+example:
+let mut x = "hello".to_string();
+or
+let mut x:String = String::from("hello");
+
+
+when you create something like -> "hi" its automatically &str unless you use .to_string() or say String::from("hi").
+
+
+now read stack and heap memory.txt

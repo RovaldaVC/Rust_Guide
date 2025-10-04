@@ -1,0 +1,22 @@
+read the main.rs but come here and read this file when you get into const and static part.
+
+to create a valuable outside a fn we should use const or static instead of let.
+
+1.const:
+Doesn’t exist in memory. It’s just a compile-time substitution. Wherever you use PI, the compiler literally plugs in 3.1415926535.
+Each use is its own copy, so you can’t get a stable address from it.
+Fast, clean, no overhead.
+Downside: must be fully known at compile time.
+
+2.static:
+Does exist in memory. GREETING has a single global address, like a permanent resident in your program’s data segment.
+Same instance everywhere you reference it.
+Can be mut, but then it’s guarded by the compiler demanding unsafe when you touch it, because mutable globals = instant race conditions in multithreading land.
+
+So:
+Use const when you want a number, string, or anything that’s compile-time deterministic.
+Use static when you really need a single, long-lived global object.
+
+If you’re wondering whether you should ever use static mut in normal code, the answer is basically: no, unless you like debugging data races at 3 a.m.
+
+now read the output file.

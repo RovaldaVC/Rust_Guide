@@ -1,0 +1,15 @@
+No requirements needed you can read that file.
+
+there are two ways to create a string in Rust:
+
+1 : .to_string() → shorthand, flexible.
+example:
+let s = "hello".to_string();
+
+2: String::from() → explicit, beginner-friendly, often preferred in docs for clarity.
+example:
+let s = String::from("hello");
+
+the fact is i feel like the beginner friendly is actuallu harder..
+
+now read mut and immutable.txt

@@ -1,0 +1,24 @@
+no requirements needed you can read that file.
+
+Compound data types
+These are the molecules you build from the atoms. They group multiple values into one type.
+
+Rust gives you two built-in compound types:
+
+1. Tuple
+Fixed size, can hold values of different types.
+Example:
+let tup: (i32, f64, char) = (500, 6.4, 'a');
+let (x, y, z) = tup; // destructuring
+println!("{}", y);   // 6.4
+
+2. Array
+Fixed size, all elements must be the same type.
+Example:
+let arr: [i32; 3] = [1, 2, 3];
+println!("{}", arr[0]); // 1
+
+for Array we use [] and for Tuple we use ().
+for array we use ; and for tuple we use , to separate the values.
+
+now read how to create a string.txt

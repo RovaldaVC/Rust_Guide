@@ -1,0 +1,33 @@
+🧱 Arrays
+Fixed size. You must know the number of elements at compile time.
+All elements must have the same type.
+example :
+let arr = [1, 2, 3]; // size = 3, cannot change
+
+You can’t add or remove elements.
+Stored on the stack (fast, but limited).
+(hope you know what is stack and heap)
+
+🔗 Tuples
+Fixed size too.
+But can store different types.
+example:
+let person = ("Arshia", 18, true); // String, int, bool
+
+Good for small, grouped data.
+
+🧺 Collections (Vec, String, HashMap)
+Grow or shrink dynamically — you can add/remove values anytime.
+Stored on the heap (more flexible, but slightly slower).
+Designed for handling unknown or large amounts of data.
+let mut v = vec![1, 2, 3];
+v.push(4); // You can add more
+
+🧠 Think like this:
+Type	Size	Types allowed	
+-------	-------	--------------
+Array	Fixed	Same type	❌	Small, fixed data
+Tuple	Fixed	Mixed types	❌	Grouping few related values
+Vector	Dynamic	Same type	✅	Lists that grow
+HashMap	Dynamic	Key–value pairs	✅	Fast lookups
+String	Dynamic	UTF-8 text	✅	Text storage

@@ -1,0 +1,18 @@
+usize is Rust’s way of saying: “I’ll give you a number big enough to index every element in memory on your machine. Don’t worry about the exact size, I’ll match the architecture.”
+
+So:
+
+On a 32-bit system → usize is a 32-bit unsigned integer.
+
+On a 64-bit system → usize is a 64-bit unsigned integer.
+
+It’s used for things like .len(), array indexing, and memory sizes because those depend on the machine’s address space. If you tried to use a plain i32, you’d eventually cry when indexing something that doesn’t fit in 2 billion elements.
+
+In your function:
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+
+
+.len() gives back a usize, so the return type has to be usize. It’s basically the “native size type” of Rust.

@@ -1,0 +1,14 @@
+what is & and how to use it in Rust?
+
+imagine if i have a value but i want to create another value that can point to the same memory location where the first value is stored.
+for that we use &.
+& means i dont want to copy the value of the pervious variable for my new variable just let me use the reference.
+
+example:
+let x = 5;
+let y = &x;
+
+now y is a reference to x, so if i change x, y will also change.
+so y doesnt copy the value of x, it just points to the same memory location as x.
+
+now read compound_data_types.txt

@@ -1,0 +1,35 @@
+Shadowing is Rust’s polite way of saying: “Congrats, you just declared a new variable with the same name as the old one. The old one is gone now, deal with it.”
+
+Example:
+fn main() {
+    let x = 5;
+    let x = x + 1;   // shadows the old `x`
+    let x = x * 2;   // shadows again
+    println!("x = {}", x); // 12
+}
+
+What’s happening:
+First x = 5
+Second x replaces it with 6 (5 + 1)
+Third x replaces it with 12 (6 * 2)
+
+Why it exists:
+Transforming values without mutability
+You can keep re-defining with the same name instead of making new variables or marking it mut.
+Changing type
+
+Unlike mut, shadowing even allows you to change type:
+let spaces = "   "; // string slice
+let spaces = spaces.len(); // now usize
+
+So:
+mut = change the same variable’s value, type stays the same.
+shadowing = make a new variable with the same name, type can change too.
+
+let x = 5;
+let x = 10;
+shadowing
+
+let mut x = 5;
+x = 10;
+mutability

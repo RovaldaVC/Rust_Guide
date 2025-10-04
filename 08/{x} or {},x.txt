@@ -1,0 +1,7 @@
+println!("Value is: {x}") vs println!("Value is: {}", x)
+
+"{x}" is Rust’s newer named capture syntax. It directly grabs the variable with that name, no need to pass it again. Cleaner if you just want to print variables as-is.
+`
+"{}", x is the classic formatting style. You put placeholders {} and then list the variables in order.
+
+Both work, but "{x}" is just syntactic sugar they added later. Behind the scenes, it’s doing the same thing as "{}", x.

@@ -1,0 +1,16 @@
+So what does match do?
+Think of match as a super-powered if/else that checks all possible patterns a value can have.
+Rust forces you to handle all possible variants of an enum when you use match.
+That’s why it’s safer than if/else.
+
+👉 match is used when you want to branch logic based on different patterns.
+
+It’s not always required, but it’s the cleanest way to:
+unwrap Option<T> (Some vs None)
+unwrap Result<T,E> (Ok vs Err)
+
+work with custom enums with many variants
+
+🔑 Summary:
+Use match whenever you need to handle every possible case of an enum.
+It’s like if/else, but more powerful because it works directly with enum variants and ensures you don’t “forget” a case.

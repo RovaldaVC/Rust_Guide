@@ -1,0 +1,10 @@
+## in rust you must specify the type of float you want to use for each variable.
+float numbers are f32 and f64.
+
+-like this:
+
+let x: f32 = 3.14;
+let y: f64 = 3.14;
+
+as you can see we use : to identify the type want and then 
+also = to assign the value to the variable.

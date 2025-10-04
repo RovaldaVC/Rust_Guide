@@ -1,0 +1,13 @@
+Ah, that little line is not part of Rust’s normal logic, it’s a compiler directive called an attribute.
+#![allow(warnings)]
+
+#![...] → means it applies to the entire crate (your whole program).
+allow(warnings) → tells the Rust compiler: “Hey, don’t bother me with warnings for anything in this file.”
+Basically, it silences all compiler warnings.
+
+For example, if you had an unused variable somewhere:
+let x = 5; // normally this triggers a warning
+
+With #![allow(warnings)], Rust won’t complain about it.
+It doesn’t affect program behavior—your if age >= 18 still runs the same way. It’s purely to keep the compiler quiet.
+You’ll usually see this in learning examples or small snippets, but in real projects, you typically don’t want to disable warnings, because they help you catch mistakes.

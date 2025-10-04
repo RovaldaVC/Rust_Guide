@@ -1,0 +1,49 @@
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+What it means
+T = the type of the value you want if everything goes right.
+E = the type of the error if something goes wrong.
+
+So Result<T, E> represents:
+Ok(T) → success (and it gives you the good result)
+Err(E) → failure (and it gives you some error info)
+
+Example 1: Division
+
+fn divide(a: i32, b: i32) -> Result<i32, String> {
+    if b == 0 {
+        Err(String::from("Division by zero!"))
+    } else {
+        Ok(a / b)
+    }
+}
+
+If you call divide(10, 2), you get Ok(5).
+If you call divide(10, 0), you get Err("Division by zero!").
+
+Example 2: File reading
+
+use std::fs::File;
+fn main() {
+    let file = File::open("hello.txt");
+
+    match file {
+        Ok(f) => println!("File opened successfully: {:?}", f),
+        Err(e) => println!("Failed to open file: {:?}", e),
+    }
+}
+
+Here:
+If the file exists → Ok(File)
+If it doesn’t → Err(io::Error)
+
+Why do we need this?
+Option<T> is good when something might be there or not (simple case).
+But sometimes, you want to know why it failed. That’s where Result<T, E> comes in.
+Instead of just “Some/None”, you get “Ok/Err” with the error type included.
+
+👉 In short:
+Option<T> = “maybe a value, maybe not.”
+Result<T, E> = “either success with a value, or failure with an error.”

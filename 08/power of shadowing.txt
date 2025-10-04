@@ -1,0 +1,18 @@
+this folder might be repeated in shadowing part but its not bad to read it.
+
+When you write:
+
+let mut x = 5;  // x is i32
+x = "hi";       // ❌ error: expected integer, found &str
+
+
+Rust locks x to i32 at compile time. You can only assign another i32 to it.
+If you really want to reuse the same name with a different type, that’s where shadowing comes in:
+
+let x = 5;      // i32
+let x = "hi";   // &str, new variable shadows the old one
+println!("{x}");
+
+So the rule is:
+mut → same type, new value.
+shadowing → throw out the old binding, make a new one, even with a new type.

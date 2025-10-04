@@ -1,0 +1,9 @@
+requirements needed: read String or &str.txt first.
+
+So simplified
+Stack: short-lived, fixed-size, fast, automatic.
+Heap: flexible size, slower, explicitly managed, where String stores its content.
+&str: just a read-only view (stack ref).
+String: owns data in heap.
+
+now you can move to 04 folder

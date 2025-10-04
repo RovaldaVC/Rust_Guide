@@ -1,0 +1,19 @@
+In Rust, there’s no elif. You just write else if—two words:
+
+fn main() {
+    let age = 20;
+
+    if age < 16 {
+        println!("You are too young to drive.");
+    } else if age < 18 {
+        println!("You can drive a bike, but not a car.");
+    } else {
+        println!("You can drive a car!");
+    }
+}
+
+
+else if works exactly like Python’s elif.
+You can chain as many else if blocks as you need.
+The final else is optional.
+So Rust’s version is slightly more verbose, but functionally identical.

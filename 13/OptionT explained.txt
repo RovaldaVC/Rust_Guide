@@ -1,0 +1,45 @@
+First, that enum you wrote is actually built into Rust — you don’t have to define it, but it’s exactly how it works under the hood:
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+
+T is a generic type (it can be anything: i32, String, f64, your custom struct, etc.).
+Option<T> means: a value might exist (Some) or it might not (None).
+
+Example 1: A value is present
+let x: Option<i32> = Some(5);
+
+x is an Option<i32>.
+Right now, it contains Some(5).
+
+Example 2: A value is missing
+let y: Option<i32> = None;
+
+y is still an Option<i32>.
+But it holds no value (None).
+
+Why is this useful?
+Because in other languages (like Python, JavaScript, C), if something might not exist, you usually get null / None / undefined / some garbage.
+That leads to null pointer bugs (the most common error in programming history).
+
+Rust fixes this with Option<T>:
+You can’t just use the value directly, the compiler forces you to handle both cases (Some or None).
+This way you must deal with the possibility of missing values, instead of pretending they don’t exist.
+
+Example with match:
+let maybe_number: Option<i32> = Some(10);
+match maybe_number {
+    Some(n) => println!("The number is {n}"),
+    None => println!("No number found"),
+}
+
+This guarantees you cover both cases.
+
+👉 So, in short:
+Option<T> = a safe wrapper for “maybe a value, maybe not.”
+Some(T) = we have the value.
+None = no value.
+
+The compiler forces you to handle both, which kills a whole category of bugs.

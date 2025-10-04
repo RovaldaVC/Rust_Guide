@@ -1,0 +1,23 @@
+## in rust you must specify the type of integer you want to use. There are two types of integers: signed and unsigned.
+
+1. Signed integers (i8, i16, i32, i64, i128, isize)
+Can store both positive and negative numbers.
+One bit is used to represent the sign (positive/negative).
+Example:
+i8 → 8 bits → range: –128 to +127
+
+2. Unsigned integers (u8, u16, u32, u64, u128, usize)
+Can only store non-negative numbers (0 and up).
+Since no bit is wasted on the sign, all bits are used for magnitude.
+Example:
+u8 → 8 bits → range: 0 to 255
+Quick contrast (8-bit case)
+i8: –128 … +127
+u8: 0 … 255
+Same 8 bits, but unsigned squeezes out more positive range by sacrificing the negatives.
+
+So when to use what?
+Use signed when negative values make sense (temperature, bank account balance).
+Use unsigned when only non-negative values exist (array indexes, sizes, counts).
+
+now read float.txt

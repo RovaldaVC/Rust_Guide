@@ -1,0 +1,18 @@
+click on alt + z to wrap the text in vscode.
+
+to compile this program there are two options:
+
+1️⃣ Using rustc directly
+rustc hello.rs → compiles a single Rust file into an executable (hello.exe on Windows).
+./hello → runs the compiled program.
+
+✅ Good for tiny, single-file programs.
+❌ Not ideal for larger projects with multiple files or dependencies.
+
+2️⃣ Using Cargo (Rust’s package manager & build system)
+cargo new project_name → creates a new Rust project with a folder structure, Cargo.toml (for dependencies), and a main.rs file.
+cd project_name → go into the project folder.
+cargo run → automatically compiles and runs the project.
+
+✅ Handles multiple files, dependencies, and builds automatically.
+✅ Recommended for almost all Rust projects.

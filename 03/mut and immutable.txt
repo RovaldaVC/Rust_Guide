@@ -1,0 +1,27 @@
+requirements needed: to read this code first you have to read &.txt
+
+1. immutable means when you make a value you can never change it during the lifetime of the program.
+2. mutable means you can! 
+
+## every variable in Rust is immutable by default. If you want to make it mutable, you can use the "mut" keyword.
+
+Example:
+1. simple mut example:
+
+let x:i32 = 5 -> own the value, immutable
+let mut x:i32 = 5 -> own the value, mutable
+
+## as you can see in line 12, to create a mutable variable, we use the "mut" keyword behind the values name which is x here.
+
+2.references mut example:
+
+let mut a = 5; // a is mutable variable.
+let a1: &i32 = &a;     //immutable reference to a 
+let a2: &mut i32 = &mut a; // mutable reference to a
+
+## so as you saw in lines 18, 19 while using mut and & you must identify it in the type after : and also after the = while creating value. -> a1: &mut i32 = &mut a;
+
+## you can only create one mutable reference to a value at a time.
+which means after creating a2 you cant create another mutable reference to a.
+
+now read string or &str.txt

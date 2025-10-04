@@ -1,0 +1,17 @@
+let condition = true;
+let number = if condition { 5 } else { 6 };
+println!("The value of number is: {number}");
+condition is true.
+
+"if condition { 5 } else { 6 }" returns a value:
+If condition is true, the expression evaluates to 5.
+If condition is false, it evaluates to 6.
+That value is assigned to number. So here, number = 5.
+println! then prints The value of number is: 5.
+
+Key differences from Python/C:
+In Rust, if can produce a value. In Python, if is just a statement.
+
+Both branches of the if must return the same type. You can’t do if x { 5 } else { "hi" }. Rust will complain.
+
+so rust gives a value from a statement that has if and else inside it, also the statement form in rust must be same types for if and else; both int or string!
